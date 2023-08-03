@@ -1,0 +1,57 @@
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const msCodeForm2 = document.querySelector('[ms-code="form2"]');
+  const jsonList = msCodeForm2.getAttribute("ms-code-json-list");
+
+  msCodeForm2.addEventListener('submit', async function(event) {
+    event.preventDefault(); // Prevent the default form submission
+
+    // Retrieve the current member JSON data
+    const memberstack = window.$memberstackDom;
+    const member = await memberstack.getMemberJSON();
+
+    // Create a new member.data object if it doesn't already exist
+    if (!member.data) {
+      member.data = {};
+    }
+
+    // Check if the friends group already exists
+    if (!member.data[jsonList]) {
+      // Create a new friends group object
+      member.data[jsonList] = {};
+    }
+
+    // Retrieve the input values for creating the subgroup
+    const inputs = msCodeForm2.querySelectorAll('[ms-code-json-name]');
+    const subgroup = {};
+    inputs.forEach(input => {
+      const jsonName = input.getAttribute('ms-code-json-name');
+      const newItem = input.value;
+      subgroup[jsonName] = newItem;
+    });
+
+    // Generate a unique key for the new subgroup prefixed with the main group name
+    const timestamp = Date.now();
+    const subgroupKey = `${jsonList}-${timestamp}`;
+
+    // Create the new subgroup within the friends group
+    member.data[jsonList][subgroupKey] = subgroup;
+
+    // Update the member JSON with the new data
+    await memberstack.updateMemberJSON({
+      json: member.data
+    });
+
+    // Log a message to the console
+    console.log(`New subgroup with key ${subgroupKey} has been created within ${jsonList} group.`);
+
+    // Reset the input values
+    inputs.forEach(input => {
+      input.value = "";
+    });
+  });
+});
+</script>
+
