@@ -1,16 +1,32 @@
-document.addEventListener('DOMContentLoaded', function() {
-  // Get references to the elements
-  var adaptabilityParent = document.getElementById('adaptability-parent');
-  var noResultsAlert = document.getElementById('no-results-alert');
+// Wait for the document to finish loading
+document.addEventListener("DOMContentLoaded", function() {
+  // Function to check if an element is hidden
+  function isHidden(element) {
+    return window.getComputedStyle(element).display === "none";
+  }
 
-  // Check if adaptabilityParent is hidden
-  if (adaptabilityParent.style.display === 'none') {
-    // Show noResultsAlert
-    noResultsAlert.style.display = 'block';
-    console.log('Showing no-results-alert');
+  // Function to show an element
+  function showElement(element) {
+    element.style.display = "block";
+  }
+
+  // Function to hide an element
+  function hideElement(element) {
+    element.style.display = "none";
+  }
+
+  // Get references to the elements
+  var adaptabilityParent = document.getElementById("adaptability-parent");
+  var situationalAwarenessParent = document.getElementById("situational-awareness-parent");
+  var selfEfficacyParent = document.getElementById("self-efficacy-parent");
+  var noResultsAlert = document.getElementById("no-results-alert");
+
+  // Check if both adaptabilityParent and situationalAwarenessParent are hidden
+  if (isHidden(adaptabilityParent) && isHidden(situationalAwarenessParent) && isHidden(selfEfficacyParent)) {
+    showElement(noResultsAlert);
+    console.log("Showing no-results-alert");
   } else {
-    // Hide noResultsAlert
-    noResultsAlert.style.display = 'none';
-    console.log('Hiding no-results-alert');
+    hideElement(noResultsAlert);
+    console.log("Hiding no-results-alert");
   }
 });
