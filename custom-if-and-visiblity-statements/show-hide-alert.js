@@ -10,13 +10,19 @@ function updateVisibility() {
   const adaptabilityAvgValue = parseFloat(adaptabilityAvgElement.value);
   const efficacyAvgValue = parseFloat(efficacyAvgElement.value);
 
+  console.log("Situational Avg:", situationalAvgValue);
+  console.log("Adaptability Avg:", adaptabilityAvgValue);
+  console.log("Efficacy Avg:", efficacyAvgValue);
+
   if (
     isNaN(situationalAvgValue) || situationalAvgValue === 0.0 || situationalAvgElement.value === '' ||
     isNaN(adaptabilityAvgValue) || adaptabilityAvgValue === 0.0 || adaptabilityAvgElement.value === '' ||
     isNaN(efficacyAvgValue) || efficacyAvgValue === 0.0 || efficacyAvgElement.value === ''
   ) {
+    console.log("Showing no-results-alert");
     noResultsAlertElement.style.display = 'block';
   } else {
+    console.log("Hiding no-results-alert");
     noResultsAlertElement.style.display = 'none';
   }
 }

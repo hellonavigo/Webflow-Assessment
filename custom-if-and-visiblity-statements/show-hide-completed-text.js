@@ -1,36 +1,30 @@
-// Get references to the elements
-const situationalAvgElement = document.getElementById('situational-avg');
-const adaptabilityAvgElement = document.getElementById('adaptability-avg');
-const efficacyAvgElement = document.getElementById('efficacy-avg');
-const noResultsAlertElement = document.getElementById('no-results-alert');
+function handleElementDisplay(buttonElement, completedElement, avgTextElement) {
+    var isAvgZeroOrEmpty = avgTextElement.textContent === "0.0" || avgTextElement.textContent === "";
 
-// Check the values and update visibility
-function updateVisibility() {
-  const situationalAvgValue = parseFloat(situationalAvgElement.value);
-  const adaptabilityAvgValue = parseFloat(adaptabilityAvgElement.value);
-  const efficacyAvgValue = parseFloat(efficacyAvgElement.value);
-
-  console.log("Situational Avg:", situationalAvgValue);
-  console.log("Adaptability Avg:", adaptabilityAvgValue);
-  console.log("Efficacy Avg:", efficacyAvgValue);
-
-  if (
-    isNaN(situationalAvgValue) || situationalAvgValue === 0.0 || situationalAvgElement.value === '' ||
-    isNaN(adaptabilityAvgValue) || adaptabilityAvgValue === 0.0 || adaptabilityAvgElement.value === '' ||
-    isNaN(efficacyAvgValue) || efficacyAvgValue === 0.0 || efficacyAvgElement.value === ''
-  ) {
-    console.log("Showing no-results-alert");
-    noResultsAlertElement.style.display = 'block';
-  } else {
-    console.log("Hiding no-results-alert");
-    noResultsAlertElement.style.display = 'none';
-  }
+    // Set the display style of the button and completed elements based on the average value.
+    buttonElement.style.display = isAvgZeroOrEmpty ? "flex" : "none";
+    completedElement.style.display = isAvgZeroOrEmpty ? "none" : "flex";
 }
 
-// Attach the updateVisibility function to the input events of the elements
-situationalAvgElement.addEventListener('input', updateVisibility);
-adaptabilityAvgElement.addEventListener('input', updateVisibility);
-efficacyAvgElement.addEventListener('input', updateVisibility);
+// This event listener waits for the DOM content to be loaded before executing the code.
+document.addEventListener("DOMContentLoaded", function() {
+    // Get references to elements related to "Mental Acuity" section.
+    var mentalAcuityButton = document.getElementById("mental-acuity-button");
+    var mentalAcuityCompleted = document.getElementById("mental-acuity-completed");
+    var situationalAvgText = document.getElementById("situational-avg");
 
-// Initial visibility check
-updateVisibility();
+    // Get references to elements related to "Grit" section.
+    var gritButton = document.getElementById("grit-button");
+    var gritCompleted = document.getElementById("grit-completed");
+    var adaptabilityAvgText = document.getElementById("adaptability-avg");
+    
+    // Get references to elements related to "Drive" section.
+    var driveButton = document.getElementById("drive-button");
+    var driveCompleted = document.getElementById("drive-completed");
+    var selfEfficacyAvgText = document.getElementById("efficacy-avg");
+
+    // Call the handleElementDisplay function for each section to update element visibility.
+    handleElementDisplay(mentalAcuityButton, mentalAcuityCompleted, situationalAvgText);
+    handleElementDisplay(gritButton, gritCompleted, adaptabilityAvgText);
+    handleElementDisplay(driveButton, driveCompleted, selfEfficacyAvgText);
+});
