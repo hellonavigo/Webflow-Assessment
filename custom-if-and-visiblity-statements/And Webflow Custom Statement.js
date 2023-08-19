@@ -1,4 +1,3 @@
-<script>
 function handleElementDisplay(buttonElement, completedElement, avgTextElement) {
     var isAvgZeroOrEmpty = avgTextElement.textContent === "0.0" || avgTextElement.textContent === "";
 
@@ -29,4 +28,3 @@ document.addEventListener("DOMContentLoaded", function() {
     handleElementDisplay(gritButton, gritCompleted, adaptabilityAvgText);
     handleElementDisplay(driveButton, driveCompleted, selfEfficacyAvgText);
 });
-</script>
