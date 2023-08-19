@@ -1,26 +1,30 @@
-// Define a function to be tested
-function add(a, b) {
-    return a + b;
+// Get references to the elements
+const situationalAvgElement = document.getElementById('situational-avg');
+const adaptabilityAvgElement = document.getElementById('adaptability-avg');
+const efficacyAvgElement = document.getElementById('efficacy-avg');
+const noResultsAlertElement = document.getElementById('no-results-alert');
+
+// Check the values and update visibility
+function updateVisibility() {
+  const situationalAvgValue = parseFloat(situationalAvgElement.value);
+  const adaptabilityAvgValue = parseFloat(adaptabilityAvgElement.value);
+  const efficacyAvgValue = parseFloat(efficacyAvgElement.value);
+
+  if (
+    isNaN(situationalAvgValue) || situationalAvgValue === 0.0 || situationalAvgElement.value === '' ||
+    isNaN(adaptabilityAvgValue) || adaptabilityAvgValue === 0.0 || adaptabilityAvgElement.value === '' ||
+    isNaN(efficacyAvgValue) || efficacyAvgValue === 0.0 || efficacyAvgElement.value === ''
+  ) {
+    noResultsAlertElement.style.display = 'block';
+  } else {
+    noResultsAlertElement.style.display = 'none';
+  }
 }
 
-// Test cases
-function testAdd() {
-    console.log("Running testAdd...");
+// Attach the updateVisibility function to the input events of the elements
+situationalAvgElement.addEventListener('input', updateVisibility);
+adaptabilityAvgElement.addEventListener('input', updateVisibility);
+efficacyAvgElement.addEventListener('input', updateVisibility);
 
-    // Test case 1
-    const result1 = add(2, 3);
-    console.log("Test case 1:", result1 === 5);
-
-    // Test case 2
-    const result2 = add(-1, 5);
-    console.log("Test case 2:", result2 === 4);
-
-    // Test case 3
-    const result3 = add(0, 0);
-    console.log("Test case 3:", result3 === 0);
-
-    console.log("testAdd complete!");
-}
-
-// Run the tests
-testAdd();
+// Initial visibility check
+updateVisibility();
