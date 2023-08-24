@@ -43,4 +43,4 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-//url from JSDeliver hosted on"https://cdn.jsdelivr.net/gh/hellonavigo/Webflow-Assessment@1/custom-if-and-visiblity-statements/show-hide-completed-text.js"
+//url hosted on"https://cdn.jsdelivr.net/gh/hellonavigo/Webflow-Assessment@1/custom-if-and-visiblity-statements/show-hide-completed-text.js"
