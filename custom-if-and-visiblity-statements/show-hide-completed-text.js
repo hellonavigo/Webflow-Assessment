@@ -23,8 +23,18 @@ document.addEventListener("DOMContentLoaded", function() {
     var driveCompleted = document.getElementById("drive-completed");
     var selfEfficacyAvgText = document.getElementById("efficacy-avg");
 
+	// Get references to elements related to "Committment" section.
+    var commitmentButton = document.getElementById("commitment-button");
+    var commitmentCompleted = document.getElementById("commitment-completed");
+    var confidenceAvgText = document.getElementById("confidence-avg");
+    
+    
     // Call the handleElementDisplay function for each section to update element visibility.
     handleElementDisplay(mentalAcuityButton, mentalAcuityCompleted, situationalAvgText);
     handleElementDisplay(gritButton, gritCompleted, adaptabilityAvgText);
     handleElementDisplay(driveButton, driveCompleted, selfEfficacyAvgText);
+    handleElementDisplay(commitmentButton, commitmentCompleted, confidenceAvgText);
 });
+
+
+//url hosted on"https://cdn.jsdelivr.net/gh/hellonavigo/Webflow-Assessment@1/custom-if-and-visiblity-statements/show-hide-completed-text.js"
