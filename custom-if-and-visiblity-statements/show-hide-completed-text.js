@@ -27,6 +27,13 @@ document.addEventListener("DOMContentLoaded", function() {
     var commitmentButton = document.getElementById("commitment-button");
     var commitmentCompleted = document.getElementById("commitment-completed");
     var confidenceAvgText = document.getElementById("confidence-avg");
+
+    // Get references to elements related to "Vision" section.
+    var visionButton = document.getElementById("vision-button");
+    var visionCompleted = document.getElementById("vision-completed");
+    var creativityAvgText = document.getElementById("creativity-avg");
+
+    
     
     
     // Call the handleElementDisplay function for each section to update element visibility.
@@ -34,6 +41,7 @@ document.addEventListener("DOMContentLoaded", function() {
     handleElementDisplay(gritButton, gritCompleted, adaptabilityAvgText);
     handleElementDisplay(driveButton, driveCompleted, selfEfficacyAvgText);
     handleElementDisplay(commitmentButton, commitmentCompleted, confidenceAvgText);
+    handleElementDisplay(visionButton, visionCompleted, creativityAvgText);
 });
 
 
