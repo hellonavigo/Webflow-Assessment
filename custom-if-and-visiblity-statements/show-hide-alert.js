@@ -21,11 +21,13 @@ document.addEventListener("DOMContentLoaded", function() {
   var selfEfficacyParent = document.getElementById("self-efficacy-parent");
   var confidenceParent = document.getElementById("confidence-parent");
   var creativityParent = document.getElementById("creativity-parent");
+  var socialParent = document.getElementById("social-parent");
+
   
   var noResultsAlert = document.getElementById("no-results-alert");
 
   // Check if both adaptabilityParent and situationalAwarenessParent are hidden
-  if (isHidden(adaptabilityParent) && isHidden(situationalAwarenessParent) && isHidden(selfEfficacyParent) && isHidden(confidenceParent) && isHidden(creativityParent)) {
+  if (isHidden(adaptabilityParent) && isHidden(situationalAwarenessParent) && isHidden(selfEfficacyParent) && isHidden(confidenceParent) && isHidden(creativityParent) && isHidden(socialParent)) {
     showElement(noResultsAlert);
     console.log("Showing no-results-alert");
   } else {
