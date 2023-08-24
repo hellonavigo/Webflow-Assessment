@@ -32,8 +32,6 @@ document.addEventListener("DOMContentLoaded", function() {
     var visionButton = document.getElementById("vision-button");
     var visionCompleted = document.getElementById("vision-completed");
     var creativityAvgText = document.getElementById("creativity-avg");
-
-    
     
     
     // Call the handleElementDisplay function for each section to update element visibility.
@@ -45,4 +43,4 @@ document.addEventListener("DOMContentLoaded", function() {
 });
 
 
-//url hosted on"https://cdn.jsdelivr.net/gh/hellonavigo/Webflow-Assessment@1/custom-if-and-visiblity-statements/show-hide-completed-text.js"
+//url from JSDeliver hosted on"https://cdn.jsdelivr.net/gh/hellonavigo/Webflow-Assessment@1/custom-if-and-visiblity-statements/show-hide-completed-text.js"
