@@ -33,11 +33,12 @@ document.addEventListener("DOMContentLoaded", function() {
     var visionCompleted = document.getElementById("vision-completed");
     var creativityAvgText = document.getElementById("creativity-avg");
 
-    // Get references to elements related to "Social Intelligence" section.
-    var socialButton = document.getElementById("social-button");
-    var socialCompleted = document.getElementById("social-completed");
+    // Get references to elements related to "Service" section.
+    var serviceButton = document.getElementById("service-button");
+    var serviceCompleted = document.getElementById("service-completed");
     var emotionalAvgText = document.getElementById("emotional-avg");
     
+   
     
     // Call the handleElementDisplay function for each section to update element visibility.
     handleElementDisplay(mentalAcuityButton, mentalAcuityCompleted, situationalAvgText);
@@ -46,6 +47,7 @@ document.addEventListener("DOMContentLoaded", function() {
     handleElementDisplay(commitmentButton, commitmentCompleted, confidenceAvgText);
     handleElementDisplay(visionButton, visionCompleted, creativityAvgText);
     handleElementDisplay(socialButton, socialCompleted, emotionalAvgText);
+    handleElementDisplay(serviceButton, serviceCompleted, compassionAvgText);
 });
 
 
