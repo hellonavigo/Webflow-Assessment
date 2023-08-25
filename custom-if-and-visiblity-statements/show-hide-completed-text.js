@@ -33,10 +33,16 @@ document.addEventListener("DOMContentLoaded", function() {
     var visionCompleted = document.getElementById("vision-completed");
     var creativityAvgText = document.getElementById("creativity-avg");
 
+
+    // Get references to elements related to "Social Intelligence" section.
+    var serviceButton = document.getElementById("social-button");
+    var serviceCompleted = document.getElementById("social-completed");
+    var emotionalAvgText = document.getElementById("emotional-avg");
+
     // Get references to elements related to "Service" section.
     var serviceButton = document.getElementById("service-button");
     var serviceCompleted = document.getElementById("service-completed");
-    var emotionalAvgText = document.getElementById("emotional-avg");
+    var compassionAvgText = document.getElementById("compassion-avg");
     
    
     
