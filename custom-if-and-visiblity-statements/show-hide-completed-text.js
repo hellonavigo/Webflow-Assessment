@@ -44,6 +44,15 @@ document.addEventListener("DOMContentLoaded", function() {
     var serviceCompleted = document.getElementById("service-completed");
     var compassionAvgText = document.getElementById("compassion-avg");
     
+    // Get references to elements related to "Teamability" section.
+    var teamabilityButton = document.getElementById("teamability-button");
+    var teamabilityCompleted = document.getElementById("teamability-completed");
+    var integrityAvgText = document.getElementById("integrity-avg");
+
+    // Get references to elements related to "Leadership" section.
+    var leadershipButton = document.getElementById("leadership-button");
+    var leadershipCompleted = document.getElementById("leadership-completed");
+    var authenticityAvgText = document.getElementById("authenticity-avg");
    
     
     // Call the handleElementDisplay function for each section to update element visibility.
@@ -54,6 +63,9 @@ document.addEventListener("DOMContentLoaded", function() {
     handleElementDisplay(visionButton, visionCompleted, creativityAvgText);
     handleElementDisplay(socialButton, socialCompleted, emotionalAvgText);
     handleElementDisplay(serviceButton, serviceCompleted, compassionAvgText);
+    handleElementDisplay(teamabilityButton, teamabilityCompleted, integrityAvgText);
+    handleElementDisplay(leadershipButton, leadershipCompleted, authenticityAvgText);
+
 });
 
 
