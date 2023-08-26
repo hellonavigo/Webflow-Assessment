@@ -35,8 +35,8 @@ document.addEventListener("DOMContentLoaded", function() {
 
 
     // Get references to elements related to "Social Intelligence" section.
-    var serviceButton = document.getElementById("social-button");
-    var serviceCompleted = document.getElementById("social-completed");
+    var socialButton = document.getElementById("social-button");
+    var socialCompleted = document.getElementById("social-completed");
     var emotionalAvgText = document.getElementById("emotional-avg");
 
     // Get references to elements related to "Service" section.
