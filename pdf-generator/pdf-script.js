@@ -3,7 +3,7 @@ document.querySelector('#download-pdf').addEventListener('click', function () {
   const originalButtonText = downloadButton.textContent;
   downloadButton.textContent = 'Generating...';
 
-  const contentToCapture = document.querySelector('.content-download');
+  const contentToCapture = document.querySelector('.content');
 
   html2canvas(contentToCapture).then((canvas) => {
     const base64image = canvas.toDataURL('image/png');
