@@ -10,12 +10,12 @@
       elementsToDelay.forEach(element => {
         element.style.visibility = "visible"; // Make the element visible after the delay
         element.style.opacity = "0"; // Set the initial opacity to 0
-        element.style.animation = "fadeIn 0.5s"; // Apply the fadeIn animation
+        element.style.animation = "fadeIn 0.7s"; // Apply the fadeIn animation
         element.addEventListener("animationend", function() {
           element.style.opacity = "1"; // Set opacity to 1 at the end of the animation
         });
       });
-    }, 750);
+    }, 1000);
   });
 
 <style>
