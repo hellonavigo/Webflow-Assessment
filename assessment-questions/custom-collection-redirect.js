@@ -33,4 +33,4 @@ function configureButton(buttonId, urlSuffix) {
 
 configureButton('button', '#next-assessment');
 configureButton('link', '#content1');
-
+configureButton('button-demographics', '#next-assessment');
